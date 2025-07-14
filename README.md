@@ -1,4 +1,4 @@
-# NYC Apartment Scraper
+# NYC Apartment Scraper (In Progress)
 This project is a web-based tool that scrapes real-time NYC apartment listings from Craigslist and analyzes their neighborhood safety based on recent crime data from the NYC Open Data portal. The goal is to help users make informed rental decisions by providing safety labels and map visualizations based on crime proximity.
 
 # Project Overview
