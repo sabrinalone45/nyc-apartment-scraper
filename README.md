@@ -63,9 +63,7 @@ Run the app
 
 python app.py
 
-View in browser
-
-Navigate to http://127.0.0.1:5000/ in your browser.
+View in browser: navigate to http://127.0.0.1:5000/ in your browser.
 
 File Structure
 nyc-apartment-scraper/
