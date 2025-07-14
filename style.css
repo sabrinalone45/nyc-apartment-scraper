@@ -1,0 +1,122 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to bottom, #ffe9f3, #d1f4ff);
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fffbe6;
+  border-radius: 15px;
+  padding: 20px 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+h1 {
+  text-align: center;
+  color: #ff69b4;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.filters {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 1em;
+}
+
+.listing-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #5c3d99;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+
+  /* Prevent overlap */
+  word-wrap: break-word;     /* Break long words to avoid overflow */
+  overflow-wrap: break-word; /* Same as above, better support */
+  white-space: normal;       /* Allow wrapping to new lines */
+}
+
+.listings {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px; 
+}
+
+
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px dashed #ccc;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.listing-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #5c3d99;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.listing-title:hover {
+  text-decoration: underline;
+}
+
+.listing-meta {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.listing-safety {
+  font-weight: 600;
+  color: #111;
+}
+
+/* Safety color themes */
+.safety-very-safe {
+  border-color: #70d17b;
+  background-color: #e9ffe9;
+}
+
+.safety-moderate {
+  border-color: #fcd34d;
+  background-color: #fffce9;
+}
+
+.safety-risky {
+  border-color: #ffa500;
+  background-color: #fff2e5;
+}
+
+.safety-avoid-at-night {
+  border-color: #f87171;
+  background-color: #ffe9e9;
+}
+
+.filter-summary {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #333;
+}

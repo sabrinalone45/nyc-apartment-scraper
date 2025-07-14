@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sabrina's Apartment Scraper</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🏡 Sabrina's Safety-Rated NYC Apartments 🛡️</h1>
+
+    <div class="filters">
+      <form method="GET">
+        <label for="filter">Filter by Safety:</label>
+        <select name="filter" id="filter">
+          <option value="" {% if not filter_by %}selected{% endif %}>All</option>
+          <option value="Very Safe" {% if filter_by == 'Very Safe' %}selected{% endif %}>Very Safe</option>
+          <option value="Moderate" {% if filter_by == 'Moderate' %}selected{% endif %}>Moderate</option>
+          <option value="Risky" {% if filter_by == 'Risky' %}selected{% endif %}>Risky</option>
+          <option value="Avoid at Night" {% if filter_by == 'Avoid at Night' %}selected{% endif %}>Avoid at Night</option>
+        </select>
+      
+        <label for="borough">Filter by Borough:</label>
+        <select name="borough" id="borough">
+          <option value="">All Boroughs</option>
+          <option value="brooklyn" {% if borough == 'brooklyn' %}selected{% endif %}>Brooklyn</option>
+          <option value="manhattan">Manhattan</option>
+          <option value="queens">Queens</option>
+          <option value="bronx">Bronx</option>
+          <option value="staten island">Staten Island</option>
+        </select>
+      
+        <button type="submit">Apply</button>
+      </form>      
+    </div>
+
+    <div class="listings">
+
+      {% if filter_by or borough %}
+        <p class="filter-summary">
+          Showing listings
+          {% if filter_by %} with safety = <strong>{{ filter_by }}</strong>{% endif %}
+          {% if borough %} in <strong>{{ borough.title() }}</strong>{% endif %}
+        </p>
+      {% endif %}
+    
+      {% for apt in listings %}
+        <div class="card safety-{{ apt.safety | lower | replace(' ', '-') }}">
+          <a href="{{ apt.link }}" target="_blank" class="listing-title">{{ apt.title }}</a>
+          <p class="listing-meta">
+            <span class="listing-location">📍 {{ apt.location }}</span><br>
+            <span class="listing-price">💵 {{ apt.price }}</span><br>
+          </p>
+          <div class="listing-safety">
+            Safety: <span class="safety-label safety-{{ apt.safety | lower | replace(' ', '-') }}">{{ apt.safety }}</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    
+  </div>
+</body>
+</html>
