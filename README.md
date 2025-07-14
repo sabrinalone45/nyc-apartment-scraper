@@ -65,7 +65,7 @@ python app.py
 
 View in browser: navigate to http://127.0.0.1:5000/ in your browser.
 
-File Structure
+# File Structure
 nyc-apartment-scraper/
 ├── app.py                  # Flask web server
 ├── scraper.py              # Listing scraper and crime data fetcher
