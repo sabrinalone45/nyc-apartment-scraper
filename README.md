@@ -15,10 +15,12 @@ Safety Assessment:
 - Fetches 10,000 recent NYC crime reports (last 12 months).
 - Calculates the number of crimes within 0.25 miles of each listing.
 - Labels listings as Very Safe, Moderate, Risky, or Avoid at Night using scoring thresholds.
+  
 Craigslist Listing Scraper:
 - Extracts apartment title, price, location, and posting link.
 - Geocodes locations using OpenStreetMap's Nominatim API.
 - Caches geocoding results to speed up future runs.
+  
 Interactive Web App:
 - Built with Flask and Folium for map visualization.
 - Filter listings by safety level or borough.
